@@ -9,13 +9,15 @@ function App() {
   
   return (
     <div className="App">
-      <div>
+      
+     <div style={{ backgroundColor: '#E8E9EF', minHeight: '100vh' }}>
+     <div>
         <NavbarMenu/>
       </div>
      <PostCreate></PostCreate>
-    
-    
     </div>
+    
+     </div>
   );
 }
 

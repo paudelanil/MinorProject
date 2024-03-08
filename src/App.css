@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #8AAAE5;
 }
 
 .App-link {
@@ -36,4 +36,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+.app-container {
+  background-color: #686868;
+  min-height: 100vh;
+  padding: 20px; /* Adjust the padding based on your design */
+  box-sizing: border-box;
 }
