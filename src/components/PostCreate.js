@@ -94,6 +94,9 @@ function PostCreate() {
         });
 
         setPredictionResponse(response.data);
+        
+        console.log(predictionResponse["Music Data"]);
+
         setShowImage(true);
       } catch (error) {
         console.error('Error uploading image:', error);
@@ -117,6 +120,7 @@ function PostCreate() {
           />
           <Button onClick={handleSubmit} variant="light">
             Submit
+            
           </Button>
         </Form.Group>
 
@@ -130,7 +134,7 @@ function PostCreate() {
         {showImage && <SubmittedImage imageEmotion={predictionResponse['Emotion']} imageUrl={URL.createObjectURL(image)} />}
       </Card>
 
-      {predictionResponse['Music Data'] && (
+      {predictionResponse["Music Data"] && (
         <>
           <h2>Recommended Songs</h2>
           
