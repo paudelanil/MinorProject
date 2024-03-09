@@ -17,8 +17,8 @@ const MusicCard = ({ musicData }) => {
         <Card.Body>
           <Card.Title>{musicData['Song Name']}</Card.Title>
           <Card.Text>
-            <p>Artist: {musicData['Artist']}</p>
-            <p>Emotion: {musicData['Emotion']}</p>
+            {/* <p>Artist: {musicData['Artist']}</p> */}
+            {/* <p>Emotion: {musicData['Emotion']}</p> */}
             <audio controls style={{ width: '100%' }}>
               <source src={musicData['Preview Url']} type="audio/mpeg" />
               Your browser does not support the audio tag.
