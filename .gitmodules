@@ -1,0 +1,3 @@
+[submodule "MinorBackend"]
+	path = MinorBackend
+	url = https://github.com/paudelanil/MinorBackend
