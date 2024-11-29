@@ -17,10 +17,10 @@ conda activate myenv
 
 ### 2. Install required dependencies
 
-Install from `Requirements.txt` file:
+Install from `Requirement.txt` file:
 
 ```bash
-pip install -r Requirements.txt
+pip install -r Requirement.txt
 ```
 
 
