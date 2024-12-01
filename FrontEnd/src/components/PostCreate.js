@@ -87,7 +87,7 @@ function PostCreate() {
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await axios.post('http://localhost:8000/api/detect', formData, {
+        const response = await axios.post('backend:8000/api/detect', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
