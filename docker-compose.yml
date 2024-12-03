@@ -1,15 +1,6 @@
 version: "3.8"
 services:
-  frontend:
-    build:
-      context: ./FrontEnd    # Path to the frontend directory
-    container_name: react-app
-    ports:
-      - "3000:3000"          # Expose React app on port 3000
-    networks:
-      - app-network
-    depends_on:
-      - backend              # Ensure backend starts first
+       
 
   backend:
     build:
@@ -19,12 +10,29 @@ services:
       - "8000:8000"          # Expose Django app on port 8000
     networks:
       - app-network
+
+    tty: true
+    stdin_open: true    
+
     environment:
       - DJANGO_DEBUG=True
-      - DJANGO_ALLOWED_HOSTS=localhost
+      
     volumes:
       - ./BackEnd:/app       # Mount the backend directory for development
     command: python manage.py runserver 0.0.0.0:8000  # Run Django server on all interfaces
+
+  frontend:
+    build:
+      context: ./FrontEnd    # Path to the frontend directory
+    container_name: react-app
+    ports:
+      - "3000:3000"          # Expose React app on port 3000
+    networks:
+      - app-network
+    depends_on:
+      - backend          # Ensure backend starts first
+    tty: true
+    stdin_open: true  
 
 networks:
   app-network:

@@ -7,6 +7,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import './audioStyle.css'; // Import the external CSS file
 
+
+const API_BASE_URL = 'http://localhost:8000';
+
 const MusicCard = ({ musicData }) => {
   const defaultImage = "https://media.wired.com/photos/5927001eaf95806129f51539/master/w_1920,c_limit/spotify-logo-zoom-s.jpg"
 
@@ -87,7 +90,7 @@ function PostCreate() {
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await axios.post('backend:8000/api/detect', formData, {
+        const response = await axios.post(`${API_BASE_URL}/api/detect`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
